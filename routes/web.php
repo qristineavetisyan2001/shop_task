@@ -14,6 +14,10 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+Route::get('/', function () {
+    return view('home');
+})->name("home");
+
 
 Route::get('/registration', function () {
     return view('registration');
@@ -21,7 +25,15 @@ Route::get('/registration', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('loginPage');
+
+Route::get('/catalog', function () {
+    return view('catalog');
+})->name('catalog');
+
+Route::get('/content', function () {
+    return view('content');
+})->name('content');
 
 Route::post('/setUser', [RegistrationController::class, 'registration'])->name("registration");
 Route::post('/loginUser', [LoginController::class, 'login'])->name("login");
