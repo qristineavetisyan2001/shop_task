@@ -1,4 +1,4 @@
-<footer class="footer-distributed mt-5">
+<footer class="footer-distributed mt-5 footer">
 
     <div class="footer-left">
 

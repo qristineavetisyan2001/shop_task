@@ -14,7 +14,7 @@ class LoginController extends Controller
 
         if ($user && password_verify($request->password, $user->password)) {
             session(['loggedUser' => $user]);
-            return view("registration");
+            return view("userPage");
         } else {
             return view("login");
         }

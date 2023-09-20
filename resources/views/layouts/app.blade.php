@@ -28,7 +28,9 @@
 </style>
 <body>
     @include("inc.header")
-    @yield('content')
+    <div class="root">
+        @yield('content')
+    </div>
     @include("inc.footer")
 
 

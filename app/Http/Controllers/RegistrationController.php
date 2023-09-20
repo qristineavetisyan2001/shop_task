@@ -23,6 +23,7 @@ class RegistrationController extends Controller
         $newUser->save();
 
         session(['loggedUser' => $newUser]);
+        return redirect()->route("loginPage");
     }
 
 
