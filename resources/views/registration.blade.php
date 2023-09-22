@@ -83,7 +83,6 @@
                                         <div class="d-flex justify-content-end pt-3">
                                             <button type="submit" class="btn btn-warning btn-lg ms-2">Registration</button>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

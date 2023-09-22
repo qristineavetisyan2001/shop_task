@@ -11,11 +11,8 @@ class CatalogController extends Controller
     public function getCatalog()
     {
 
-        $products = Product::get();
-        foreach ($products as $product) {
-            $product->images = ProductImage::where("product_id", $product->id)->get()->toArray();
-        }
+        $products = Product::with('images')->get();
 
-        return view("catalog",["products"=>$products]);
+        return view("catalog",["products" => $products]);
     }
 }

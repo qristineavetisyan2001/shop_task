@@ -16,7 +16,7 @@ class RegistrationController extends Controller
         $newUser->lastName = $request->lastName;
         $newUser->email = $request->email;
         $newUser->gender = $request->gender;
-        $newUser->avatar = "avatar";
+        $newUser->avatar = "default_avatar.jpg";
         $newUser->dateOfBirth = $request->dateOfBirth;
         $newUser->password = password_hash($request->password, PASSWORD_BCRYPT);
 

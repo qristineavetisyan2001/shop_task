@@ -58,10 +58,7 @@
     <div class="user-page-container">
         <div class="user-image-container">
             <div>
-                <img class="user-avatar" src="https://cdn-icons-png.flaticon.com/512/1053/1053244.png" alt="">
-            </div>
-            <div>
-                <button>Change</button>
+                <img class="user-avatar" src="{{asset("uploads/avatar/".session("loggedUser")->avatar)}}" alt="">
             </div>
         </div>
         <div class="user-info-container">
@@ -71,7 +68,9 @@
                     Firstname
                 </div>
                 <div>
-                    Example firstname
+                    @if(session("loggedUser"))
+                        {{session("loggedUser")->firstName}}
+                    @endif
                 </div>
             </div>
             <div class="user-info-items">
@@ -79,7 +78,9 @@
                     Lastname
                 </div>
                 <div>
-                    Example lastname
+                    @if(session("loggedUser"))
+                        {{session("loggedUser")->lastName}}
+                    @endif
                 </div>
             </div>
             <div class="user-info-items">
@@ -87,11 +88,102 @@
                     Email
                 </div>
                 <div>
-                    example@gmail.com
+                    @if(session("loggedUser"))
+                        {{session("loggedUser")->email}}
+                    @endif
                 </div>
             </div>
             <div>
-                <button>Edit</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Edit
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="card-body text-black">
+                                    <h3 class="mb-5 text-uppercase">UPDATE</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 mt-3">
+                                            <img class="user-avatar" src="{{asset("uploads/avatar/".session("loggedUser")->avatar)}}" alt="">
+                                        </div>
+                                        <div class="col-md-6 mb-4 mt-3">
+                                            <input type="file">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 mt-3">
+                                            <div class="form-outline">
+                                                <input value="{{session("loggedUser")->firstName}}" name="firstName" type="text" id="form3Example1m"
+                                                       class="form-control form-control-lg"/>
+                                                <label class="form-label" for="form3Example1m">First name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4 mt-3">
+                                            <div class="form-outline">
+                                                <input value="{{session("loggedUser")->lastName }}" name="lastName" type="text" id="form3Example1n"
+                                                       class="form-control form-control-lg"/>
+                                                <label class="form-label" for="form3Example1n">Last name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input value="{{session("loggedUser")->email }}" name="email" type="email" id="form3Example8" class="form-control form-control-lg"/>
+                                        <label class="form-label" for="form3Example8">Email</label>
+                                    </div>
+
+                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                                        <h6 class="mb-0 me-4">Gender: </h6>
+
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                            <input @if(session("loggedUser")->gender=="female") checked @endif name="gender" class="form-check-input" type="radio"
+                                                   id="femaleGender"
+                                                   value="female"/>
+                                            <label class="form-check-label" for="femaleGender">Female</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                            <input @if(session("loggedUser")->gender=="male") checked @endif name="gender" class="form-check-input" type="radio"
+                                                   id="maleGender"
+                                                   value="male"/>
+                                            <label class="form-check-label" for="maleGender">Male</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input value="{{session("loggedUser")->dateOfBirth }}" name="dateOfBirth" type="date" id="form3Example9" class="form-control form-control-lg"/>
+                                        <label class="form-label" for="form3Example9">Date of Birth</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input name="password" type="password" id="form3Example90"
+                                               class="form-control form-control-lg"/>
+                                        <label class="form-label" for="form3Example90">Password</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="form3Example99"
+                                               class="form-control form-control-lg"/>
+                                        <label class="form-label" for="form3Example99">Confirm Password</label>
+                                    </div>
+                                </div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

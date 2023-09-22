@@ -1,6 +1,6 @@
 <div class="new-product">
     <div class="new-product-image">
-        <a href="{{ route("content") }}">
+        <a>
             <img src="https://m.media-amazon.com/images/I/41qVq26ZXkL._SR240,220_.jpg" alt="">
         </a>
     </div>

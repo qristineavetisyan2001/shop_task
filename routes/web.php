@@ -1,11 +1,23 @@
 <?php
 
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CatalogController;
+
+
+header("Access-Control-Allow-Origin: http://127.0.0.1:8000");
+header("Access-Control-Allow-Headers: Content-Type"); // Allow the content-type header
+// Other headers and response data
+
+
+// Other headers and response data
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,12 +43,11 @@ Route::get('/login', function () {
 })->name('loginPage');
 
 Route::get('/userPage', function () {
+    if(!session("loggedUser")){
+        return redirect()->route("loginPage");
+    }
     return view('userPage');
 })->name('userPage');
-
-Route::get('/content', function () {
-    return view('content');
-})->name('content');
 
 Route::get('/admin', function () {
     if (session("admin")){
@@ -47,9 +58,19 @@ Route::get('/admin', function () {
     }
 })->name('admin');
 
+
+
+Route::get('/ordersPage', function () {
+    return view('ordersPage');
+})->name('ordersPage');
+
+
 Route::post('/setUser', [RegistrationController::class, 'registration'])->name("registration");
 Route::post('/loginUser', [LoginController::class, 'login'])->name("login");
+Route::get('/logOut', [LogOutController::class, 'logout'])->name("logOut");
 Route::post('/loginAdmin', [AdminController::class, 'login'])->name("loginAdmin");
 Route::post('/addProduct', [ProductController::class, 'addProduct'])->name("addProduct");
 Route::get('/catalog', [CatalogController::class, 'getCatalog'])->name("catalog");
+Route::get('/content/{product}', [ContentController::class, 'getContent'])->name("content");
+Route::post('/getProductImages', [ContentController::class, 'getProductImages'])->name("getProductImages");
 

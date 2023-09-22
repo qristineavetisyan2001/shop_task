@@ -42,12 +42,12 @@ class ProductController extends Controller
                     $fileName = md5(date('y-m-d H:i:sa')).$type;
                     $newImage = new ProductImage();
 
-                    $image->move(public_path('uploads'), $fileName);
+                    $image->move(public_path('uploads/content/'), $fileName);
 
                     $newImage->productImage = $fileName;
                     $newImage->product_id = $productId;
                     $newImage->save();
-                    sleep(0.5);
+                    sleep(1);
                 }
         }
     }
