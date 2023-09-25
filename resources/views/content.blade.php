@@ -116,6 +116,14 @@
                         {{$product->productPrice}}
                     </span>
                     </div>
+                   @if(session('loggedUser'))
+                        <div>
+                            <form action="">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <button>To Basket</button>
+                            </form>
+                        </div>
+                   @endif
                     <div>
                         <p class="product-page-info-description">
                             {{$product->productDescription}}

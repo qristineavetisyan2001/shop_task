@@ -65,6 +65,11 @@ Route::get('/ordersPage', function () {
 })->name('ordersPage');
 
 
+Route::get('/basketPage', function () {
+    return view('basketPage');
+})->name('basketPage');
+
+
 Route::post('/setUser', [RegistrationController::class, 'registration'])->name("registration");
 Route::post('/loginUser', [LoginController::class, 'login'])->name("login");
 Route::get('/logOut', [LogOutController::class, 'logout'])->name("logOut");

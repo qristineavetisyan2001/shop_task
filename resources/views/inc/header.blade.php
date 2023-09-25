@@ -20,7 +20,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-light my-2 my-sm-0 mr-3" type="submit">Search</button>
         </form>
         <div class="d-flex">
             @if(!session("loggedUser"))
@@ -36,12 +36,16 @@
                 </div>
             @else
 
-                <div class="mx-3">
+                <div>
                     <a class="p-2 bg-light text-dark" href="{{route("userPage")}}">
                         {{ session("loggedUser")->firstName }}
                     </a>
                 </div>
-
+                <div class="mx-3">
+                    <a class="p-2 bg-light text-dark" href="{{route("basketPage")}}">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
                 <div>
                     <a class="p-2 bg-light text-dark" href="{{route("logOut")}}">
                         LogOut
