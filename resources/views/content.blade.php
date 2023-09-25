@@ -118,7 +118,8 @@
                     </div>
                    @if(session('loggedUser'))
                         <div>
-                            <form action="">
+                            <form action="{{ route("addBasket", $product->id) }}" method="post">
+                                @csrf
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <button>To Basket</button>
                             </form>

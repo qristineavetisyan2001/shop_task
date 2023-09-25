@@ -11,5 +11,9 @@ class Basket extends Model
 
     protected $table = "basket_products";
 
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 
 }

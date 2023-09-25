@@ -72,76 +72,29 @@
     <div class="basket-container">
         <div class="basket-title">Basket</div>
         <div class="basket-products">
-            <div class="basket-product">
-                <div>
-                    <img src="https://i.ebayimg.com/images/g/QSUAAOSwy3BhJQsQ/s-l1200.webp" alt=""
-                         class="basket-product-image">
+            @foreach($basketProducts as $basketProduct)
+                <div class="basket-product">
+                    <div>
+                        <img class="basket-product-image" src="{{ asset('uploads/content/' . $basketProduct->images[0]->productImage) }}">
+                    </div>
+                    <div>
+                        <h3 class="basket-product-info">{{ $basketProduct-> productName }}</h3>
+                    </div>
+                    <div>
+                        <h3 class="basket-product-info">{{ $basketProduct-> productPrice }}</h3>
+                    </div>
+                    <form action="{{ route("deleteBasketProduct", $basketProduct->id) }}">
+                        @csrf
+                        <div>
+                            <button class="basket-product-buy">Delete</button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <h3 class="basket-product-info">Product Name</h3>
-                </div>
-                <div>
-                    <button class="basket-product-buy">BUY</button>
-                </div>
-            </div>
-            <div class="basket-product">
-                <div>
-                    <img src="https://i.ebayimg.com/images/g/QSUAAOSwy3BhJQsQ/s-l1200.webp" alt=""
-                         class="basket-product-image">
-                </div>
-                <div>
-                    <h3 class="basket-product-info">Product Name</h3>
-                </div>
-                <div>
-                    <button class="basket-product-buy">BUY</button>
-                </div>
-            </div>
-            <div class="basket-product">
-                <div>
-                    <img src="https://i.ebayimg.com/images/g/QSUAAOSwy3BhJQsQ/s-l1200.webp" alt=""
-                         class="basket-product-image">
-                </div>
-                <div>
-                    <h3 class="basket-product-info">Product Name</h3>
-                </div>
-                <div>
-                    <button class="basket-product-buy">BUY</button>
-                </div>
-            </div>
-            <div class="basket-product">
-                <div>
-                    <img src="https://i.ebayimg.com/images/g/QSUAAOSwy3BhJQsQ/s-l1200.webp" alt=""
-                         class="basket-product-image">
-                </div>
-                <div>
-                    <h3 class="basket-product-info">Product Name</h3>
-                </div>
-                <div>
-                    <button class="basket-product-buy">BUY</button>
-                </div>
-            </div>
-            <div class="basket-product">
-                <div>
-                    <img src="https://i.ebayimg.com/images/g/QSUAAOSwy3BhJQsQ/s-l1200.webp" alt=""
-                         class="basket-product-image">
-                </div>
-                <div>
-                    <h3 class="basket-product-info">Product Name</h3>
-                </div>
-                <div>
-                    <button class="basket-product-buy">BUY</button>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </div>
 
 
-<script
-    src="https://code.jquery.com/jquery-3.7.1.js"
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous">
-</script>
-
 @endsection
+

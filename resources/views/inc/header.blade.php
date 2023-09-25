@@ -42,7 +42,7 @@
                     </a>
                 </div>
                 <div class="mx-3">
-                    <a class="p-2 bg-light text-dark" href="{{route("basketPage")}}">
+                    <a class="p-2 bg-light text-dark" href="{{route("getBasketProducts")}}">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </div>

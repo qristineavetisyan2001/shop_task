@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\BasketController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
@@ -29,9 +32,6 @@ header("Access-Control-Allow-Headers: Content-Type"); // Allow the content-type 
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name("home");
 
 
 Route::get('/registration', function () {
@@ -75,7 +75,12 @@ Route::post('/loginUser', [LoginController::class, 'login'])->name("login");
 Route::get('/logOut', [LogOutController::class, 'logout'])->name("logOut");
 Route::post('/loginAdmin', [AdminController::class, 'login'])->name("loginAdmin");
 Route::post('/addProduct', [ProductController::class, 'addProduct'])->name("addProduct");
+Route::post('/addBasket/{id}', [BasketController::class, 'addBasket'])->name("addBasket");
 Route::get('/catalog', [CatalogController::class, 'getCatalog'])->name("catalog");
 Route::get('/content/{product}', [ContentController::class, 'getContent'])->name("content");
 Route::post('/getProductImages', [ContentController::class, 'getProductImages'])->name("getProductImages");
+Route::get('/getBasketProducts', [BasketController::class, 'getBasketProducts'])->name("getBasketProducts");
+Route::get('/deleteBasketProduct/{id}', [BasketController::class, 'deleteBasketProduct'])->name("deleteBasketProduct");
+Route::post('/changeUserInfo', [UserController::class, 'changeUserInfo'])->name("changeUserInfo");
+Route::get('/', [HomeController::class, 'getHome'])->name("home");
 
