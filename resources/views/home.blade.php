@@ -12,21 +12,21 @@
         <div class="carousel-inner">
             @foreach($cheapProducts as $index => $cheapProduct)
                     <div class="carousel-item {{$index==0?'active':''}} slider_container">
-                        <a href="{{ route("content", $cheapProduct->id) }}">
-                            <div class="w-100 h-100 d-flex justify-content-center align-items-center bg-dark">
-                                <div class="sale_product_info">
-                                    <div>
-                                        <h2 class="text-light display-2">{{$cheapProduct->productName}}</h2>
-                                    </div>
-                                    <div>
-                                        <span class="text-light display-4">{{$cheapProduct->productPrice}} $</span>
-                                    </div>
-                                </div>
-                                <div class="sale_product_image">
-                                    <img class="slider_item_image" src="{{asset("uploads/content/". $cheapProduct->images[0]->productImage)}}" alt="">
+                        <div class="w-100 h-100 d-flex justify-content-center align-items-center bg-dark">
+                            <div class="sale_product_info">
+                                <a href="{{ route("content", $cheapProduct->id) }}">
+                                    <h2 class="text-light display-2">{{$cheapProduct->productName}}</h2>
+                                </a>
+                                <div>
+                                    <span class="text-light display-4">{{$cheapProduct->productPrice}} $</span>
                                 </div>
                             </div>
-                        </a>
+                            <div class="sale_product_image">
+                                <a href="{{ route("content", $cheapProduct->id) }}">
+                                    <img class="slider_item_image" src="{{asset("uploads/content/". $cheapProduct->images[0]->productImage)}}" alt="">
+                                </a>
+                            </div>
+                        </div>
                     </div>
             @endforeach
         </div>
