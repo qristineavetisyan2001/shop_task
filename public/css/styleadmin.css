@@ -287,3 +287,63 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+/*-----------------*/
+
+.add-product-form-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 20px;
+}
+
+input, textarea{
+    display: block;
+    margin-top: 10px;
+    width: 500px;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid var(--primary);
+    background: none;
+    border-radius: 13px;
+    color: #FFFFFF;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--light);
+}
+
+.image-input{
+    display: none;
+}
+
+.image-input-label{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+    cursor: pointer;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+input:focus, textarea:focus {
+    background-color: var(--secondary);
+    outline: none;
+}
+
+.add-images-container{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.add-product-button{
+    font-size: 20px;
+    padding:10px 0;
+    border: none;
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
