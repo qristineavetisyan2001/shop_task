@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogOutController;
@@ -49,17 +50,6 @@ Route::get('/userPage', function () {
     return view('userPage');
 })->name('userPage');
 
-Route::get('/admin', function () {
-    if (session("admin")){
-        return view('Admin.admin');
-    }
-    else{
-        return view('Admin.adminLogin');
-    }
-})->name('admin');
-
-
-
 Route::get('/ordersPage', function () {
     return view('ordersPage');
 })->name('ordersPage');
@@ -82,5 +72,8 @@ Route::post('/getProductImages', [ContentController::class, 'getProductImages'])
 Route::get('/getBasketProducts', [BasketController::class, 'getBasketProducts'])->name("getBasketProducts");
 Route::get('/deleteBasketProduct/{id}', [BasketController::class, 'deleteBasketProduct'])->name("deleteBasketProduct");
 Route::post('/changeUserInfo', [UserController::class, 'changeUserInfo'])->name("changeUserInfo");
+Route::post('/addCategory', [CategoryController::class, 'addCategory'])->name("addCategory");
+Route::get('/admin', [AdminController::class, 'getAdminPage'])->name('admin');
 Route::get('/', [HomeController::class, 'getHome'])->name("home");
+
 

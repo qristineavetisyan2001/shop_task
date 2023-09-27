@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -16,6 +17,16 @@ class AdminController extends Controller
         else{
             return view("Admin.adminLogin");
 
+        }
+    }
+
+    public static function getAdminPage(){
+        $categories = Category::get();
+        if (session("admin")){
+            return view("Admin.admin", ['categories'=>$categories]);
+        }
+        else{
+            return view('Admin.adminLogin');
         }
     }
 }

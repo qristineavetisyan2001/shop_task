@@ -14,6 +14,7 @@ class ProductController extends Controller
 
         $newProduct->productName = $request->productName;
         $newProduct->productPrice = $request->productPrice;
+        $newProduct->category_id = $request->category_id;
         $newProduct->productDescription = $request->productDescription;
         $newProduct->productCode = "product_".date("y-m-d H:s:i");
 

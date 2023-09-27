@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ class HomeController extends Controller
 {
     public static function getCheapProducts()
     {
-        $cheapProducts = Product::orderBy('productPrice', 'ASC')->take(3)->get();
+        $cheapProducts = Product::orderBy('productPrice', 'ASC')->take(10)->get();
 
         foreach ($cheapProducts as $cheapProduct) {
             $cheapProduct->images = ProductImage::where("product_id", $cheapProduct->id)->get();
@@ -42,6 +43,8 @@ class HomeController extends Controller
     }
     public static function getHome()
     {
-        return view("home", ["cheapProducts" => self::getCheapProducts(),"newProducts" => self::getNewProducts(),"allProducts" => self::getAllProducts()]);
+        $categories = Category::get();
+
+        return view("home", ["categories"=>$categories,"cheapProducts" => self::getCheapProducts(),"newProducts" => self::getNewProducts(),"allProducts" => self::getAllProducts()]);
     }
 }
