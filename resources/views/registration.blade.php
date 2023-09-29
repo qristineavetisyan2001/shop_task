@@ -2,94 +2,140 @@
 
 @section("content")
 
+    {{--            <div class="login_wrapper">--}}
+    {{--                <div class="login_container">--}}
+    {{--                    <div>--}}
+    {{--                        <img class="login_image" src="https://img.freepik.com/premium-photo/creepy-alien-invader-against-background-blurry-lights-concept-alien_158863-1716.jpg?w=360" alt="">--}}
+    {{--                    </div>--}}
+    {{--                    <div class="login_main">--}}
+    {{--                        <div class="login_title">Login</div>--}}
+    {{--                        <div>--}}
+    {{--                            <form action="" class="login_form">--}}
+    {{--                                <input type="email" name="email" id="">--}}
+    {{--                                <input type="password" name="password" id="">--}}
+    {{--                                <button>Login</button>--}}
+    {{--                            </form>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
 
-    <form action="{{ route('registration') }}" method="post">
-        @csrf
-        <section class="h-100 bg-dark">
-            <div class="container py-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col">
-                        <div class="card card-registration my-4">
-                            <div class="row g-0">
-                                <div class="col-xl-6 d-none d-xl-block">
-                                    <img
-                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
-                                        alt="Sample photo" class="img-fluid"
-                                        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"/>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="card-body p-md-5 text-black">
-                                        <h3 class="mb-5 text-uppercase">Registration</h3>
 
-                                        <div class="row">
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input name="firstName" type="text" id="form3Example1m"
-                                                           class="form-control form-control-lg"/>
-                                                    <label class="form-label" for="form3Example1m">First name</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-4">
-                                                <div class="form-outline">
-                                                    <input name="lastName" type="text" id="form3Example1n"
-                                                           class="form-control form-control-lg"/>
-                                                    <label class="form-label" for="form3Example1n">Last name</label>
-                                                </div>
-                                            </div>
+    <!-- Section: Design Block -->
+    <section class="text-center text-lg-start">
+        <style>
+            .cascading-right {
+                margin-right: -50px;
+            }
+
+            @media (max-width: 991.98px) {
+                .cascading-right {
+                    margin-right: 0;
+                }
+            }
+        </style>
+
+        <!-- Jumbotron -->
+        <div class="container py-4 d-flex justify-content-center align-items-center mt-3 login_container">
+            <div class="row g-0 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+                        <div class="card-body p-5 shadow-5 text-center">
+                            <h2 class="fw-bold mb-5">Sign up now</h2>
+                            <form action="{{route('registration')}}" method="post">
+                                @csrf
+                                <!-- 2 column grid layout with text inputs for the first and last names -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input name="firstName" type="text" id="form3Example1" class="form-control"/>
+                                            <label class="form-label" for="form3Example1">First name</label>
                                         </div>
-
-                                        <div class="form-outline mb-4">
-                                            <input name="email" type="email" id="form3Example8" class="form-control form-control-lg"/>
-                                            <label class="form-label" for="form3Example8">Email</label>
-                                        </div>
-
-                                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-                                            <h6 class="mb-0 me-4">Gender: </h6>
-
-                                            <div class="form-check form-check-inline mb-0 me-4">
-                                                <input name="gender" class="form-check-input" type="radio"
-                                                       id="femaleGender"
-                                                       value="female"/>
-                                                <label class="form-check-label" for="femaleGender">Female</label>
-                                            </div>
-
-                                            <div class="form-check form-check-inline mb-0 me-4">
-                                                <input name="gender" class="form-check-input" type="radio"
-                                                       id="maleGender"
-                                                       value="male"/>
-                                                <label class="form-check-label" for="maleGender">Male</label>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="form-outline mb-4">
-                                            <input name="dateOfBirth" type="date" id="form3Example9" class="form-control form-control-lg"/>
-                                            <label class="form-label" for="form3Example9">Date of Birth</label>
-                                        </div>
-
-                                        <div class="form-outline mb-4">
-                                            <input name="password" type="password" id="form3Example90"
-                                                   class="form-control form-control-lg"/>
-                                            <label class="form-label" for="form3Example90">Password</label>
-                                        </div>
-
-                                        <div class="form-outline mb-4">
-                                            <input type="password" id="form3Example99"
-                                                   class="form-control form-control-lg"/>
-                                            <label class="form-label" for="form3Example99">Confirm Password</label>
-                                        </div>
-
-                                        <div class="d-flex justify-content-end pt-3">
-                                            <button type="submit" class="btn btn-warning btn-lg ms-2">Registration</button>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input name="lastName" type="text" id="form3Example2" class="form-control"/>
+                                            <label class="form-label" for="form3Example2">Last name</label>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <input name="email" type="email" id="form3Example3" class="form-control"/>
+                                    <label class="form-label" for="form3Example3">Email address</label>
+                                </div>
+
+                                <div class="d-flex form-outline mb-4 gap-3">
+                                    <div>Gender:</div>
+                                    <div>
+                                        <input name="gender" type="radio" id="male"/>
+                                        <label class="form-label" for="male">Male</label>
+                                    </div>
+                                    <div>
+                                        <input name="gender" type="radio" id="female"/>
+                                        <label class="form-label" for="female">Female</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input name="dateOfBirth" type="date" id="date" class="form-control"/>
+                                    <label class="form-label" for="date">Date Of Birth</label>
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <input name="password" type="password" id="password" class="form-control"/>
+                                    <label class="form-label" for="password">Password</label>
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="confirmPassword" class="form-control"/>
+                                    <label class="form-label" for="confirmPassword">Confirm Password</label>
+                                </div>
+
+                                <!-- Submit button -->
+                                <button id="signupButton" disabled type="submit" class="btn btn-primary btn-block mb-4">
+                                    Sign up
+                                </button>
+
+                                <div>
+                                    Already have an account? <a href="{{route('loginPage')}}">Login</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img
+                        src="https://e1.pxfuel.com/desktop-wallpaper/201/872/desktop-wallpaper-wlop-digital-art-artwork-%E2%80%A2-for-you-aeolian-thumbnail.jpg"
+                        class="w-100 h-25  shadow-4"
+                        alt=""/>
+                </div>
             </div>
-        </section>
-    </form>
+        </div>
+        <!-- Jumbotron -->
+    </section>
+    <!-- Section: Design Block -->
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const signupButton = document.getElementById('signupButton');
+
+        confirmPasswordInput.addEventListener('keyup', (e) => {
+            if (passwordInput.value === e.target.value) {
+                signupButton.disabled = false;
+            }
+            else {
+                signupButton.disabled = true;
+            }
+        })
+
+    </script>
 @endsection

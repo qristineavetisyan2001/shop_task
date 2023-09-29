@@ -182,13 +182,13 @@
                     <div class="add-images-container">
                         <label class="image-input-label" for="image1">+</label>
                         <input class="image-input" type="file" name="image1" id="image1">
-                        <label class="image-input-label" for="image1">+</label>
+                        <label class="image-input-label" for="image2">+</label>
                         <input class="image-input" type="file" name="image2" id="image2">
-                        <label class="image-input-label" for="image1">+</label>
+                        <label class="image-input-label" for="image3">+</label>
                         <input class="image-input" type="file" name="image3" id="image3">
-                        <label class="image-input-label" for="image1">+</label>
+                        <label class="image-input-label" for="image4">+</label>
                         <input class="image-input" type="file" name="image4" id="image4">
-                        <label class="image-input-label" for="image1">+</label>
+                        <label class="image-input-label" for="image5">+</label>
                         <input class="image-input" type="file" name="image5" id="image5">
                     </div>
                     <button class="add-product-button" type="submit">Add Product</button>
@@ -207,10 +207,6 @@
 
 
 <script>
-
-    const inputs = $(".image-input").toArray();
-    const labels = $(".image-input-label").toArray();
-
 
 </script>
 

@@ -112,25 +112,27 @@
     </div>
 
     <div class="new-products-wrapper">
-        <div class="new-products-title">New Products</div>
         <div class="new-products-container">
-            @foreach($newProducts as $index => $newProduct)
-                <div class="new-product">
-                    <div class="new-product-image">
-                        <a href="{{ route("content", $newProduct->id) }}">
-                            <img src="{{asset("uploads/content/". $newProduct->images[0]->productImage)}}" alt="">
-                        </a>
-                    </div>
-                    <div class="new-product-info">
-                        <a href="{{ route("content", $newProduct->id) }}">
-                            <h4>{{$newProduct->productName}}</h4>
-                        </a>
-                        <div>
-                            <span>{{$newProduct->productPrice}} $</span>
+            <div class="new-products-title">New Products</div>
+            <div class="new-products">
+                @foreach($newProducts as $index => $newProduct)
+                    <div class="new-product">
+                        <div class="new-product-image">
+                            <a href="{{ route("content", $newProduct->id) }}">
+                                <img src="{{asset("uploads/content/". $newProduct->images[0]->productImage)}}" alt="">
+                            </a>
+                        </div>
+                        <div class="new-product-info">
+                            <a href="{{ route("content", $newProduct->id) }}">
+                                <h4>{{$newProduct->productName}}</h4>
+                            </a>
+                            <div>
+                                <span class="new-product-info-price">{{$newProduct->productPrice}} $</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 
@@ -167,8 +169,8 @@
         let slideTexts = [];
 
         @foreach($categories as $category)
-        bgImages.push('{{$category->categoryImage}}')
-        slideTexts.push('{{$category->categoryName}}')
+            bgImages.push('{{$category->categoryImage}}')
+            slideTexts.push('{{$category->categoryName}}')
         @endforeach
 
 

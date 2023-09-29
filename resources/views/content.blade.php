@@ -146,6 +146,8 @@
 
         const productImages = [];
 
+        console.log('{{$product->images}}');
+
         @foreach($product->images as $image)
             productImages.push("{{asset("uploads/content/".$image->productImage)}}")
         @endforeach

@@ -21,8 +21,8 @@ class AdminController extends Controller
     }
 
     public static function getAdminPage(){
-        $categories = Category::get();
         if (session("admin")){
+            $categories = Category::all();
             return view("Admin.admin", ['categories'=>$categories]);
         }
         else{

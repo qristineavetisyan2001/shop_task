@@ -4,8 +4,14 @@
     <div class="catalog_wrapper">
         <div class="catalog-container">
             <div class="catalog-title">
-                <h2>Catalog</h2>
+                <div>
+                    <h2>Catalog</h2>
+                </div>
+                <div>
+                    <button class="filter">FIlter</button>
+                </div>
             </div>
+
             <div class="catalog-products">
 
                 @foreach($products as $product)

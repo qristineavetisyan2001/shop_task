@@ -1,59 +1,91 @@
-    @extends("layouts.auth")
+@extends("layouts.auth")
 
-    @section("content")
-    <section style="background-color: #9A616D;">
-        <div class="container py-5">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem;">
-                        <div class="row g-0">
-                            <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                                    alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+@section("content")
+
+{{--            <div class="login_wrapper">--}}
+{{--                <div class="login_container">--}}
+{{--                    <div>--}}
+{{--                        <img class="login_image" src="https://img.freepik.com/premium-photo/creepy-alien-invader-against-background-blurry-lights-concept-alien_158863-1716.jpg?w=360" alt="">--}}
+{{--                    </div>--}}
+{{--                    <div class="login_main">--}}
+{{--                        <div class="login_title">Login</div>--}}
+{{--                        <div>--}}
+{{--                            <form action="" class="login_form">--}}
+{{--                                <input type="email" name="email" id="">--}}
+{{--                                <input type="password" name="password" id="">--}}
+{{--                                <button>Login</button>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+        .cascading-right {
+            margin-right: -50px;
+        }
+
+        @media (max-width: 991.98px) {
+            .cascading-right {
+                margin-right: 0;
+            }
+        }
+    </style>
+
+    <!-- Jumbotron -->
+    <div class="container py-4 d-flex justify-content-center align-items-center mt-3 login_container">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card cascading-right" style="
+                    background: hsla(0, 0%, 100%, 0.55);
+                    backdrop-filter: blur(30px);
+                    width: 500px;
+                ">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="fw-bold mb-5">Login</h2>
+                        <form action="{{route('login')}}" method="post">
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+                            @csrf
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input name="email" type="email" id="form3Example3" class="form-control" />
+                                <label class="form-label" for="form3Example3">Email address</label>
                             </div>
-                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                <div class="card-body p-4 p-lg-5 text-black">
 
-                                    <form action="{{route("login")}}" method="post">
-                                        @csrf
-                                        <div class="d-flex align-items-center mb-3 pb-1">
-                                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                                            <span class="h1 fw-bold mb-0">Logo</span>
-                                        </div>
-
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your
-                                            account</h5>
-
-                                        <div class="form-outline mb-4">
-                                            <input name="email" type="email" id="form2Example17"
-                                                   class="form-control form-control-lg"/>
-                                            <label class="form-label" for="form2Example17">Email address</label>
-                                        </div>
-
-                                        <div class="form-outline mb-4">
-                                            <input name="password" type="password" id="form2Example27"
-                                                   class="form-control form-control-lg"/>
-                                            <label class="form-label" for="form2Example27">Password</label>
-                                        </div>
-
-                                        <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
-                                        </div>
-
-                                        <a class="small text-muted" href="#!">Forgot password?</a>
-                                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a
-                                                href="{{route("registrationPage")}}"
-                                                style="color: #393f81;">Register
-                                                here</a></p>
-                                    </form>
-
-                                </div>
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <input name="password" type="password" id="form3Example4" class="form-control" />
+                                <label class="form-label" for="form3Example4">Password</label>
                             </div>
-                        </div>
+
+                            <!-- Checkbox -->
+
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4">
+                                Login
+                            </button>
+
+
+                            <div>
+                                No account? <a href="{{route('registrationPage')}}">Sign Up</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <img src="https://e1.pxfuel.com/desktop-wallpaper/201/872/desktop-wallpaper-wlop-digital-art-artwork-%E2%80%A2-for-you-aeolian-thumbnail.jpg" class="w-100 h-25  shadow-4"
+                     alt="" />
+            </div>
         </div>
-    </section>
-    @endsection
+    </div>
+    <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+
+@endsection
