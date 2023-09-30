@@ -72,11 +72,11 @@
                                 <div class="d-flex form-outline mb-4 gap-3">
                                     <div>Gender:</div>
                                     <div>
-                                        <input name="gender" type="radio" id="male"/>
+                                        <input value="male" name="gender" type="radio" id="male"/>
                                         <label class="form-label" for="male">Male</label>
                                     </div>
                                     <div>
-                                        <input name="gender" type="radio" id="female"/>
+                                        <input value="female" name="gender" type="radio" id="female"/>
                                         <label class="form-label" for="female">Female</label>
                                     </div>
                                 </div>

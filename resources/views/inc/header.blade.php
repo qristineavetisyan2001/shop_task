@@ -14,12 +14,15 @@
                 <a class="navbar-brand mx-3" href="{{ route("catalog") }}">Catalog</a>
             </li>
             <li class="nav-item">
-                <a class="navbar-brand mx-3" href="#">Disabled</a>
+                <a class="navbar-brand mx-3" href="{{ route("categories") }}">Categories</a>
             </li>
         </ul>
         <div class="container">
-            <input class="input" type="text" placeholder="Search...">
-            <div class="search"></div>
+            <form id="searchForm" action="{{route('search')}}">
+                @csrf
+                <input name='searchText' class="input" type="text" placeholder="Search...">
+                <div class="search"></div>
+            </form>
         </div>
         <div class="d-flex">
             @if(!session("loggedUser"))
@@ -56,5 +59,15 @@
         </div>
     </div>
 </nav>
+
+<script>
+
+    document.addEventListener('keyup', (e)=>{
+        if(e.code === 'Enter'){
+            document.getElementById('searchForm').submit();
+        }
+    })
+
+</script>
 
 

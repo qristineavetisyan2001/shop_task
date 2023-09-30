@@ -67,6 +67,9 @@ Route::post('/loginAdmin', [AdminController::class, 'login'])->name("loginAdmin"
 Route::post('/addProduct', [ProductController::class, 'addProduct'])->name("addProduct");
 Route::post('/addBasket/{id}', [BasketController::class, 'addBasket'])->name("addBasket");
 Route::get('/catalog', [CatalogController::class, 'getCatalog'])->name("catalog");
+Route::get('/categories', [CategoryController::class, 'getCategories'])->name("categories");
+Route::get('/category/{id}', [CategoryController::class, 'getCategory'])->name("category");
+Route::get('/search', [CatalogController::class, 'search'])->name("search");
 Route::get('/content/{product}', [ContentController::class, 'getContent'])->name("content");
 Route::post('/getProductImages', [ContentController::class, 'getProductImages'])->name("getProductImages");
 Route::get('/getBasketProducts', [BasketController::class, 'getBasketProducts'])->name("getBasketProducts");

@@ -15,4 +15,10 @@ class CatalogController extends Controller
 
         return view("catalog",["products" => $products]);
     }
+
+    public static function search(Request $request){
+        $products = Product::with('images')->where('productName', 'like', '%'.$request->searchText.'%')->get();
+
+        return view("catalog",["products" => $products]);
+    }
 }

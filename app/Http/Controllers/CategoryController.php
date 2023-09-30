@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\FileSystem;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -16,5 +17,20 @@ class CategoryController extends Controller
         $newCategory->categoryImage = FileSystem::file_upload($request->file('category_image'), "uploads/categories/");;
 
         $newCategory->save();
+    }
+
+    public static function getCategory($id)
+    {
+        $category = Category::where('id', $id)->get();
+        $products = Product::where('category_id', $id)->get();
+
+        return view("categoryPage",["category" => $category, 'products'=>$products]);
+    }
+
+    public static function getCategories()
+    {
+        $categories = Category::get();
+
+        return view("categories",["categories" => $categories]);
     }
 }

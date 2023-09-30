@@ -140,7 +140,7 @@
 
     </div>
 
-    <div class="swiper swiper_z_index sample-slider">
+<!--    <div class="swiper swiper_z_index sample-slider">
         <div class="new-products-title mt-5">Top Products</div>
         <div class="swiper-wrapper swiper_wr mt-3">
             @foreach($allProducts as $index => $allProduct)
@@ -154,8 +154,33 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev arrow"></div>
         <div class="swiper-button-next arrow"></div>
-    </div>
+    </div>-->
 
+
+    <div class="model-accessories-wrapper">
+        <div class="model-accessories-container">
+            <div class="model-accessories-main-image">
+                <img data-aos="fade-right" src="https://s3.ap-south-1.amazonaws.com/modelfactory.in/upload/2022/Jun/25/recruiter_job_image/3517f424c7549ecdc083e419199c1ea0.jpg" alt="">
+            </div>
+            <div class="model-accessories-info-container">
+                <div data-aos="zoom-in-up" class="model-accessories-info">
+                    <div>
+                        <h2 class="model-accessories-info-title">Become a model</h2>
+                    </div>
+                    <div>
+                        <p class="model-accessories-info-text">
+                            Become a model Become a model Become a model Become a model Become a model Become a model
+                        </p>
+                    </div>
+                </div>
+                <div class="model-accessories-images">
+                    <img data-aos="fade-up" src="https://i.pinimg.com/564x/30/65/c7/3065c7ec5f7900d5cdc88c157ef22d36.jpg" alt="">
+                    <img data-aos="fade-up" src="https://img.freepik.com/free-photo/portrait-beautiful-blonde-lady-stylish-white-silk-dress-checkered-jacket-pearl-necklace-gently-touching-neck-posing-city-square_197531-23182.jpg" alt="">
+                    <img data-aos="fade-up" src="https://cf.ltkcdn.net/jewelry/images/orig/316188-1600x1067-costume-jewelry.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

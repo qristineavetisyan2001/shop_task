@@ -150,8 +150,9 @@
     width: 100%;
     height: 400px;
     margin-top: 90px;
-    background-image: url("https://i0.wp.com/emilybelloma.com/wp-content/uploads/2020/08/butterfly-accessories-header.jpg?fit=1080%2C520&ssl=1");
-    background-size: 100% cover;
+    /*background-image: url("https://i0.wp.com/emilybelloma.com/wp-content/uploads/2020/08/butterfly-accessories-header.jpg?fit=1080%2C520&ssl=1");*/
+    background-image: url("https://wallpapers.com/images/hd4/blue-and-pink-butterfly-a3tdewe9pgfsg0nd.jpg");
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -179,7 +180,8 @@ section {
 }
 
 .footer-distributed{
-    background:linear-gradient(to right, #000428, #004E92,#FF9FD0);
+    /*background: linear-gradient(to right, #000428, #004E92,#FF9FD0);*/
+    background-color: #414458;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
@@ -541,5 +543,87 @@ section {
 }
 
 
+/*Model*/
 
 
+.model-accessories-wrapper{
+    padding: 60px;
+}
+
+.model-accessories-container{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.model-accessories-main-image img{
+    width: 400px;
+    height: auto;
+}
+
+.model-accessories-info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.model-accessories-info-container div h2 {
+    font-size: 60px;
+}
+
+.model-accessories-info-container div p {
+    word-wrap: break-word;
+    font-weight: 100;
+}
+
+.model-accessories-images{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.model-accessories-images img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*Categories*/
+
+
+.categories-wrapper{
+
+}
+
+.categories-container{
+    margin: 0 auto;
+}
+
+.category-block{
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    gap: 50px;
+    background-size: cover;
+    background-position: center right;
+}
+
+.category-block:nth-child(even){
+    justify-content: end;
+    flex-direction: row-reverse;
+}
+
+
+.category-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.category-name{
+    font-size: 110px;
+    color: #FFFFFF;
+}

@@ -3,7 +3,7 @@
     <div class="footer-left">
 
         <div>
-            <img class="logo" src="https://seeklogo.com/images/C/carrinho-de-compras-logo-8D9FE029E6-seeklogo.com.png" alt="">
+            <img class="logo" src="{{asset('images/22.png')}}" alt="">
         </div>
         <p class="footer-links">
             <a href="#" class="link-1">Home</a>

@@ -111,7 +111,7 @@
                                         </button>
                                     </div>
                                     <h3 class="mb-5 text-uppercase">UPDATE</h3>
-                                    <form action="{{route("changeUserInfo")}}" method="post">
+                                    <form action="{{route("changeUserInfo")}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
                                             <div class="col-md-6 mb-4 mt-3">
@@ -120,7 +120,7 @@
                                                      alt="">
                                             </div>
                                             <div class="col-md-6 mb-4 mt-3">
-                                                <input type="file">
+                                                <input name="avatar" type="file">
                                             </div>
                                         </div>
                                         <div class="row">

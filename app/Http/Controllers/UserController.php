@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\FileSystem;
 use App\Http\Requests\RegistrationRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,11 +21,9 @@ class UserController extends Controller
         $currentUser->gender = $request->gender;
 
         if($request->file()){
-            $fileName = file_upload($request->file(), public_path('uploads/avatar/'));
+            $fileName = FileSystem::file_upload($request->file('avatar'), "uploads/avatar/");;;
             if($currentUser->avatar != "default_avatar.jpg"){
-
                 File::delete(public_path('uploads/avatar/' . $currentUser->avatar));
-
             }
             $currentUser->avatar = $fileName;
         }
