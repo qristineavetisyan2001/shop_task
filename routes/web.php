@@ -59,6 +59,9 @@ Route::get('/basketPage', function () {
     return view('basketPage');
 })->name('basketPage');
 
+Route::get('/creditCardPage', function () {
+    return view('creditCardPage');
+})->name('creditCardPage');
 
 Route::post('/setUser', [RegistrationController::class, 'registration'])->name("registration");
 Route::post('/loginUser', [LoginController::class, 'login'])->name("login");

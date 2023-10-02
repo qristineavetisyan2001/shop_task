@@ -105,3 +105,27 @@
     }
 }
 
+.to-category-button{
+    background-color: rgba(0, 0, 0, 0.78);
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+.to-category-button:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+

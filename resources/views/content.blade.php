@@ -93,6 +93,19 @@
             border: 5px solid black;
             cursor: none
         }
+
+        .basket-button{
+            font-size: 17px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .acitve-basket{
+            font-size: 17px;
+            padding: 5px 10px;
+            background-color: #2ca02c;
+            cursor: pointer;
+        }
     </style>
 
     <div class="product-page-root">
@@ -116,15 +129,19 @@
                         {{$product->productPrice}}
                     </span>
                     </div>
-                   @if(session('loggedUser'))
+                    @if(session('loggedUser'))
                         <div>
                             <form action="{{ route("addBasket", $product->id) }}" method="post">
                                 @csrf
                                 <i class="fa-solid fa-cart-shopping"></i>
-                                <button>To Basket</button>
+                                @if(!count($inBasket))
+                                    <button class="basket-button">To Basket</button>
+                                @else
+                                    <button disabled class="active-basket">Added</button>
+                                @endif
                             </form>
                         </div>
-                   @endif
+                    @endif
                     <div>
                         <p class="product-page-info-description">
                             {{$product->productDescription}}
@@ -149,7 +166,7 @@
         console.log('{{$product->images}}');
 
         @foreach($product->images as $image)
-            productImages.push("{{asset("uploads/content/".$image->productImage)}}")
+        productImages.push("{{asset("uploads/content/".$image->productImage)}}")
         @endforeach
 
         console.log(productImages);

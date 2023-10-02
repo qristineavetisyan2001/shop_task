@@ -91,23 +91,21 @@
 @section("content")
     <link rel="stylesheet" href="{{asset("css/home_slider_style.css")}}">
 
+
+
     <div class="home_slider_container">
         <div class="stage a">
             <div class="containeraaa a">
                 <div class="ring a">
-                    <div class="img a"></div>
-                    <div class="img a"></div>
-                    <div class="img a"></div>
-                    <div class="img a"></div>
-                    <div class="img a"></div>
-                    <div class="img a"></div>
-                    <div class="img a"></div>
-                    <div class="img a"></div>
-                    <div class="img a"></div>
-                    <div class="img a"></div>
+                    @foreach($categories as $category)
+
+                        <div class="img a">
+                            <a class="to-category-button" href="{{route('category', $category->id)}}" style="width: 100%; position: absolute; bottom: 0; display: block">{{$category->categoryName}}</a>
+                        </div>
+
+                    @endforeach
                 </div>
             </div>
-            <h2 class="slide_text" id="slide_text"></h2>
         </div>
     </div>
 
@@ -140,21 +138,21 @@
 
     </div>
 
-<!--    <div class="swiper swiper_z_index sample-slider">
+    <!--    <div class="swiper swiper_z_index sample-slider">
         <div class="new-products-title mt-5">Top Products</div>
         <div class="swiper-wrapper swiper_wr mt-3">
             @foreach($allProducts as $index => $allProduct)
-                <div class="swiper-slide">
-                    <a href="{{ route("content", $allProduct->id) }}">
+        <div class="swiper-slide">
+            <a href="{{ route("content", $allProduct->id) }}">
                         <img class="w-100" src="{{asset("uploads/content/". $allProduct->images[0]->productImage)}}">
                     </a>
                 </div>
             @endforeach
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev arrow"></div>
-        <div class="swiper-button-next arrow"></div>
-    </div>-->
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev arrow"></div>
+    <div class="swiper-button-next arrow"></div>
+</div>-->
 
 
     <div class="model-accessories-wrapper">
@@ -182,11 +180,7 @@
         </div>
     </div>
 
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
-
-
 
     <script>
 
@@ -194,14 +188,11 @@
         let slideTexts = [];
 
         @foreach($categories as $category)
-            bgImages.push('{{$category->categoryImage}}')
-            slideTexts.push('{{$category->categoryName}}')
+        bgImages.push('{{$category->categoryImage}}')
+        slideTexts.push('{{$category->categoryName}}')
         @endforeach
 
-
-
         let xPos = 0;
-
 
         gsap.timeline()
             .set('.ring', {

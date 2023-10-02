@@ -176,6 +176,7 @@
                             <option value="{{$category->id}}">{{$category->categoryName}}</option>
                        @endforeach
                     </select>
+                    <input name="productCount" placeholder="product count" type="number" min="1">
                     <input name="productPrice" placeholder="product price" type="text">
                     <textarea placeholder="product description" name="productDescription"></textarea>
                     Images

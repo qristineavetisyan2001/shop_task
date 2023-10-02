@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Basket;
-use App\Models\Product;
 use App\Models\ProductImage;
-use App\Models\User;
-use Illuminate\Http\Request;
 
 class BasketController extends Controller
 {
@@ -45,5 +42,9 @@ class BasketController extends Controller
         Basket::where("product_id", $id)->where("user_id",$currentUser["id"])->delete();
 
         return self::getBasketProducts();
+    }
+
+    public static  function  checkBasket($productId){
+        return Basket::where("product_id", $productId)->where('user_id', session('loggedUser')['id'])->get();
     }
 }
