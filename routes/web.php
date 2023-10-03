@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\BuyPageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\CreditCardController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SoldProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -59,10 +63,6 @@ Route::get('/basketPage', function () {
     return view('basketPage');
 })->name('basketPage');
 
-Route::get('/creditCardPage', function () {
-    return view('creditCardPage');
-})->name('creditCardPage');
-
 Route::post('/setUser', [RegistrationController::class, 'registration'])->name("registration");
 Route::post('/loginUser', [LoginController::class, 'login'])->name("login");
 Route::get('/logOut', [LogOutController::class, 'logout'])->name("logOut");
@@ -71,14 +71,18 @@ Route::post('/addProduct', [ProductController::class, 'addProduct'])->name("addP
 Route::post('/addBasket/{id}', [BasketController::class, 'addBasket'])->name("addBasket");
 Route::get('/catalog', [CatalogController::class, 'getCatalog'])->name("catalog");
 Route::get('/categories', [CategoryController::class, 'getCategories'])->name("categories");
+Route::get('/history', [HistoryController::class, 'getHistory'])->name("history");
 Route::get('/category/{id}', [CategoryController::class, 'getCategory'])->name("category");
 Route::get('/search', [CatalogController::class, 'search'])->name("search");
 Route::get('/content/{product}', [ContentController::class, 'getContent'])->name("content");
 Route::post('/getProductImages', [ContentController::class, 'getProductImages'])->name("getProductImages");
 Route::get('/getBasketProducts', [BasketController::class, 'getBasketProducts'])->name("getBasketProducts");
 Route::get('/deleteBasketProduct/{id}', [BasketController::class, 'deleteBasketProduct'])->name("deleteBasketProduct");
+Route::get('/creditCardPage/{id}', [BuyPageController::class, 'getBuyPage'])->name("creditCardPage");
+Route::post("/addCreditCard", [CreditCardController::class, 'addCreditCard'])->name("addCreditCard");
 Route::post('/changeUserInfo', [UserController::class, 'changeUserInfo'])->name("changeUserInfo");
 Route::post('/addCategory', [CategoryController::class, 'addCategory'])->name("addCategory");
+Route::post('/sold/{id}', [SoldProductController::class, 'sold'])->name("sold");
 Route::get('/admin', [AdminController::class, 'getAdminPage'])->name('admin');
 Route::get('/', [HomeController::class, 'getHome'])->name("home");
 

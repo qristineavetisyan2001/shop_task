@@ -96,6 +96,9 @@
                     Edit
                 </button>
             </div>
+            <div class="mt-3">
+                <a class="p-2 bg-primary text-light" href="{{route("history")}}">History</a>
+            </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

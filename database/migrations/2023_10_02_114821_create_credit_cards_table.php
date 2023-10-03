@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('credit_carts', function (Blueprint $table) {
+        Schema::create('credit_cards', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("user_id");
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string("cartNumber");
             $table->string("CVC");
-            $table->string("dataTime");
+            $table->unsignedSmallInteger("month");
+            $table->unsignedSmallInteger("year");
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('credit_carts');
+        Schema::dropIfExists('credit_cards');
     }
 };

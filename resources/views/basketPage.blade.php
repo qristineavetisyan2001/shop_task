@@ -109,40 +109,7 @@
                             <h3 class="basket-product-info">{{ $basketProduct-> productPrice }}$</h3>
                         </div>
                             <div>
-                                <a href="{{route("creditCardPage")}}" class="p-3 basket-product-button buy">Buy</a>
-                                <!-- Modal -->
-<!--                                <div  class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-                                    <div class="modal-dialog " role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Buy Product</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div>
-                                                    {{ $basketProduct-> productName }}
-                                                </div>
-                                                <div>
-                                                    Product count:
-                                                    <input id="productModalCount" name="productCount"  type="number" min="1">
-                                                </div>
-                                                <div id="totalPrice">
-                                                    Total Price:
-                                                    {{ $basketProduct-> productPrice }}
-                                                </div>
-                                                <div>
-                                                    <input id="datetime" type="text" placeholder="MM/YY" size="6" minlength="5" maxlength="5">
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
+                                <a href="{{route("creditCardPage", $basketProduct->id)}}" class="p-3 basket-product-button buy">Buy</a>
                             </div>
                         <form action="{{ route("deleteBasketProduct", $basketProduct->id) }}">
                             @csrf
