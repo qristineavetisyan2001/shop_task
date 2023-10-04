@@ -1,0 +1,31 @@
+.categories-container{
+    margin: 0 auto;
+}
+
+.category-block{
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    gap: 50px;
+    background-size: cover;
+    background-position: center right;
+}
+
+.category-block:nth-child(even){
+    justify-content: end;
+    flex-direction: row-reverse;
+}
+
+
+.category-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.category-name a{
+    font-size: 110px;
+    color: #FFFFFF;
+    text-decoration: none;
+}

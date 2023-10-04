@@ -13,7 +13,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/styleadmin.css')}}" rel="stylesheet">
+    <link href="{{asset('css/admin_style.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -140,7 +140,7 @@
                     <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                         <a href="#" class="dropdown-item">My Profile</a>
                         <a href="#" class="dropdown-item">Settings</a>
-                        <a href="#" class="dropdown-item">Log Out</a>
+                        <a href="{{route('logOutAdmin')}}" class="dropdown-item">Log Out</a>
                     </div>
                 </div>
             </div>
@@ -204,12 +204,7 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset("js/main.js")}}"></script>
-
-
-<script>
-
-</script>
+<script src="{{asset("js/admin_script.js")}}"></script>
 
 </body>
 

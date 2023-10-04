@@ -1,0 +1,52 @@
+.table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.td, .th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+.th{
+    color: #030a48;
+}
+.td{
+    line-height: 6;
+}
+
+.history-wrapper {
+    width: 100%;
+    padding: 100px;
+    min-height: 500px;
+}
+
+.history-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #0c0e12;
+    border-radius: 13px;
+    min-height: 800px;
+    padding: 20px;
+}
+
+.history-title {
+    font-size: 40px;
+    padding: 10px;
+}
+
+.history-products {
+    padding: 10px;
+}
+
+.basket-product > :nth-child(2) {
+    flex-grow: 2;
+    text-align: center;
+}
+
+.history-product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}

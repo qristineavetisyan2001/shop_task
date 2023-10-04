@@ -15,6 +15,7 @@ class ProductController extends Controller
         $newProduct->productName = $request->productName;
         $newProduct->productPrice = $request->productPrice;
         $newProduct->category_id = $request->category_id;
+        $newProduct->productCount = $request->productCount;
         $newProduct->productDescription = $request->productDescription;
         $newProduct->productCode = "product_" . date("y-m-d H:s:i");
         $newProduct->save();
@@ -22,7 +23,7 @@ class ProductController extends Controller
         $product = Product::where("productCode", $newProduct->productCode)->get()->first();
 
         self::addProductImages($product->id, $request->file());
-        return view("Admin.admin");
+        return back();
     }
 
     public static function addProductImages($productId, $images)

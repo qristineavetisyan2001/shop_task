@@ -14,13 +14,13 @@ class SoldProductController extends Controller
 
         $soldProduct->user_id = session('loggedUser')['id'];
         $soldProduct->product_id = $id;
-        $soldProduct->productCount = $request->productCount;
+        $soldProduct->soldProductCount = $request->soldProductCount;
 
         $soldProduct->save();
 
         $product = Product::where('id', $id)->get()->first();
 
-        $product->productCount = $product->productCount-$request->productCount;
+        $product->productCount = $product->productCount-$request->soldProductCount;
 
         $product->save();
 

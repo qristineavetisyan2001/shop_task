@@ -1,5 +1,6 @@
-<footer class="footer-distributed mt-5 footer">
+<link rel="stylesheet" href="{{asset("css/footer_style.css")}}">
 
+<footer class="footer-distributed mt-5 footer">
     <div class="footer-left">
 
         <div>

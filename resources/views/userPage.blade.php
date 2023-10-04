@@ -1,64 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-
-    <style>
-        .user-page-wrapper {
-            width: 100%;
-            padding: 120px;
-        }
-
-        .user-page-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            box-shadow: 0 0 10px #0d0d0d;
-            border-radius: 13px;
-            display: flex;
-            padding: 20px;
-
-        }
-
-        .user-image-container {
-            padding: 20px;
-            height: 700px;
-        }
-
-        .user-image-container div button {
-            display: block;
-            margin: 10px auto;
-        }
-
-        .user-info-container {
-            flex-grow: 2;
-            padding: 20px;
-        }
-
-        .user-avatar {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .user-name-container {
-            margin-bottom: 10px;
-            display: flex;
-            font-size: 60px;
-            font-weight: 800;
-            gap: 20px;
-        }
-
-        .user-info-items {
-            margin-bottom: 10px;
-        }
-
-        .user-info-items > :nth-child(odd) {
-            font-size: 20px;
-            font-weight: 800;
-        }
-    </style>
-
+    <link rel="stylesheet" href="{{asset("css/userPage_style.css")}}">
     <div class="user-page-wrapper">
         <div class="user-page-container">
             <div class="user-image-container">
@@ -197,11 +140,5 @@
         </div>
     </div>
     </div>
-
-    <script
-        src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous">
-    </script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 @endsection

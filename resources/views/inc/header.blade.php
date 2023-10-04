@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset("css/header_style.css")}}">
 <nav class="navbar navbar-expand-lg navbar-dark header">
     <div class="ml-3">
         <img class="logo " src="{{asset("images/22.png")}}" alt="">
@@ -7,7 +8,6 @@
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
@@ -37,7 +37,6 @@
                     </a>
                 </div>
             @else
-
                 <div>
                     <a class="p-2 bg-light text-dark" href="{{route("userPage")}}">
                         {{ session("loggedUser")->firstName }}
@@ -53,21 +52,17 @@
                         LogOut
                     </a>
                 </div>
-
             @endif
-
         </div>
     </div>
 </nav>
 
 <script>
-
     document.addEventListener('keyup', (e)=>{
         if(e.code === 'Enter'){
             document.getElementById('searchForm').submit();
         }
     })
-
 </script>
 
 

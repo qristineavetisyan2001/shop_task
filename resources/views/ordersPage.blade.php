@@ -1,76 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .orders-page-wrapper{
-            width: 100%;
-            padding: 60px;
-            border: 5px solid red;
-        }
-
-        .orders-page-container{
-            border: 5px solid green;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .orders-page-title{
-            border: 5px solid #9d13ff;
-            font-size: 35px;
-            padding: 10px;
-        }
-
-        .orders-page-info{
-            border: 5px solid yellow;
-            padding: 10px;
-        }
-
-        .order-container{
-            border: 5px solid #0f6674;
-            display: flex;
-            padding: 10px;
-            gap: 20px;
-            cursor: pointer;
-        }
-
-        .order-container:hover .order-product-image img{
-            width: 300px;
-        }
-
-        .order-product-image img{
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            transition: 0.3s;
-        }
-
-        .order-info{
-            flex-grow: 2;
-        }
-
-        .order-name{
-            font-size: 35px;
-        }
-
-        .order-price{
-            font-size: 40px;
-            color: red;
-        }
-
-        .order-status{
-            color: #2ca02c;
-            font-size: 60px;
-        }
-
-    </style>
-
-
+    <link rel="stylesheet" href="{{asset("css/ordersPage_style.css")}}">
 <div class="orders-page-wrapper">
     <div class="orders-page-container">
         <div class="orders-page-title">Orders</div>
@@ -200,14 +131,6 @@
     </div>
 </div>
 
-<script
-    src="https://code.jquery.com/jquery-3.7.1.js"
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous">
-</script>
-
-<script>
-
-</script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 @endsection

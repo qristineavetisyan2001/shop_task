@@ -67,6 +67,7 @@ Route::post('/setUser', [RegistrationController::class, 'registration'])->name("
 Route::post('/loginUser', [LoginController::class, 'login'])->name("login");
 Route::get('/logOut', [LogOutController::class, 'logout'])->name("logOut");
 Route::post('/loginAdmin', [AdminController::class, 'login'])->name("loginAdmin");
+Route::get('/logOutAdmin', [AdminController::class, 'logOut'])->name("logOutAdmin");
 Route::post('/addProduct', [ProductController::class, 'addProduct'])->name("addProduct");
 Route::post('/addBasket/{id}', [BasketController::class, 'addBasket'])->name("addBasket");
 Route::get('/catalog', [CatalogController::class, 'getCatalog'])->name("catalog");

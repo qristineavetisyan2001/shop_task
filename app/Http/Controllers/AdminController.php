@@ -12,12 +12,18 @@ class AdminController extends Controller
         $admin = Admin::where("login", $request->login)->where("password", $request->password)->get()->first();
         if($admin){
             session(['admin' => $admin]);
-            return view("Admin.admin");
+            $categories = Category::all();
+            return view("Admin.admin", ['categories'=>$categories]);
         }
         else{
             return view("Admin.adminLogin");
-
         }
+    }
+
+    public static function logOut(){
+        session()->forget("admin");
+
+        return redirect()->route("admin");
     }
 
     public static function getAdminPage(){

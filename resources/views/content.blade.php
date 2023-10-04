@@ -1,115 +1,8 @@
 @extends(("layouts.app"))
 
 @section("content")
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .product-page-root {
-            width: 100%;
-            padding-top: 60px;
-        }
-
-        .product-page-wrapper {
-        }
-
-        .product-page-info-container {
-            margin: 0 auto;
-        }
-
-        .product-page-images-container {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .main-image {
-            width: 600px;
-            height: 600px;
-            position: relative;
-
-        }
-
-        .main-image img {
-            width: 600px;
-            height: 600px;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .all-images {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .all-images-image {
-            filter: brightness(70%);
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .all-images-image:hover {
-            width: 110px;
-        }
-
-        .product-page-info {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .product-page-info-title {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        .product-page-info-description {
-            font-size: 20px;
-        }
-
-        .product-page-info-price {
-            font-size: 30px;
-            color: #0c5460;
-        }
-
-        .active {
-            filter: brightness(100%);
-        }
-
-        .zoom {
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            border: 5px solid black;
-            cursor: none
-        }
-
-        .basket-button{
-            font-size: 17px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        .acitve-basket{
-            font-size: 17px;
-            padding: 5px 10px;
-            background-color: #2ca02c;
-            cursor: pointer;
-        }
-    </style>
-
+    <link rel="stylesheet" href="{{asset("css/content_style.css")}}">
     <div class="product-page-root">
-
         <div class="product-page-wrapper">
             <div class="product-page-info-container">
                 <div class="product-page-images-container">
@@ -153,10 +46,7 @@
     </div>
 
 
-    <script
-        src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script>
         console.log("{{'http://localhost:8000/content/'.$product->id}}");
