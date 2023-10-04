@@ -22,8 +22,8 @@ class CategoryController extends Controller
     public static function getCategory($id)
     {
         $products = Product::where('category_id', $id)->get();
-
-        return view("catalog",['products'=>$products]);
+        $categories = Category::get();
+        return view("catalog",['products'=>$products, "categories" => $categories]);
     }
 
     public static function getCategories()

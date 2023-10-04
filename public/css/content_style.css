@@ -6,27 +6,29 @@
 
 .product-page-root {
     width: 100%;
-    padding-top: 60px;
+    padding-top: 120px;
 }
 
 .product-page-wrapper {
+
 }
 
 .product-page-info-container {
     margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    gap: 70px;
 }
 
 .product-page-images-container {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    gap: 5px;
 }
 
 .main-image {
     width: 600px;
     height: 600px;
     position: relative;
-
 }
 
 .main-image img {
@@ -39,10 +41,8 @@
 
 .all-images {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
 }
 
 .all-images-image {
@@ -52,15 +52,16 @@
     object-fit: cover;
     cursor: pointer;
     transition: 0.3s;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .all-images-image:hover {
-    width: 110px;
+
 }
 
 .product-page-info {
     max-width: 800px;
-    margin: 0 auto;
 }
 
 .product-page-info-title {
@@ -89,15 +90,27 @@
     cursor: none
 }
 
+.basket-icon-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .basket-button{
     font-size: 17px;
     padding: 5px 10px;
     cursor: pointer;
+    border: none;
+    background-color: #9457f3;
+    color: #FFFFFF;
 }
 
-.acitve-basket{
-    font-size: 17px;
-    padding: 5px 10px;
-    background-color: #2ca02c;
-    cursor: pointer;
+.added{
+    background-color: #edf2f7;
+    color: rgba(148, 87, 243, 0.68);
+}
+
+.basket-icon{
+    font-size: 20px;
+    line-height: 0;
 }

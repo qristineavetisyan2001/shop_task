@@ -87,3 +87,31 @@
 .filter:hover{
     box-shadow: 0 0 5px #FF9FD0;
 }
+
+
+/*filter*/
+
+.filter_div{
+    border-radius: 20px;
+    background: #dad1ffde;
+    display: none;
+
+}
+
+.filter_divs{
+    border-top:1px solid #6c757d;
+    border-bottom:1px solid #6c757d;
+}
+
+.price_input{
+    border-radius: 5px;
+    width: 100px;
+}
+
+.go-button{
+    background-color: #9d13ff;
+    color: #FFFFFF;
+    font-weight: 600;
+    cursor: pointer;
+}
+

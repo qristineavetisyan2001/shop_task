@@ -6,11 +6,11 @@
         <div class="product-page-wrapper">
             <div class="product-page-info-container">
                 <div class="product-page-images-container">
-                    <div class="main-image">
-                        <div id="zoom"></div>
-                    </div>
                     <div class="all-images">
 
+                    </div>
+                    <div class="main-image">
+                        <div id="zoom"></div>
                     </div>
                 </div>
                 <div class="product-page-info">
@@ -18,28 +18,35 @@
                         <h2 class="product-page-info-title">{{$product->productName}}</h2>
                     </div>
                     <div>
+                        <p class="product-page-info-description">
+                            {{$product->productDescription}}
+                        </p>
+                    </div>
+                    <div>
                     <span class="product-page-info-price">
-                        {{$product->productPrice}}
+                        {{$product->productPrice}}$
                     </span>
                     </div>
                     @if(session('loggedUser'))
                         <div>
                             <form action="{{ route("addBasket", $product->id) }}" method="post">
-                                @csrf
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                @if(!count($inBasket))
-                                    <button class="basket-button">To Basket</button>
-                                @else
-                                    <button disabled class="active-basket">Added</button>
-                                @endif
+                                    @csrf
+                                   <div class="basket-icon-container">
+                                       <div class="icon-container">
+                                           <i class="fa-solid fa-cart-shopping basket-icon"></i>
+                                       </div>
+                                       <div class="basket-button-container">
+                                           @if(!count($inBasket))
+                                               <button class="basket-button">To Basket</button>
+                                           @else
+                                               <button disabled class="basket-button added">Added to basket</button>
+                                           @endif
+                                       </div>
+                                   </div>
                             </form>
                         </div>
                     @endif
-                    <div>
-                        <p class="product-page-info-description">
-                            {{$product->productDescription}}
-                        </p>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -98,13 +105,13 @@
             });
 
 
-            $("#zoom").css("left", e.clientX - 670);
-            $("#zoom").css("top", e.clientY - 100);
+            $("#zoom").css("left", e.clientX - 480);
+            $("#zoom").css("top", e.clientY - 180);
             console.log(currentMousePos);
             $("#zoom").css("background-image", `url(${mainImage.attr("src")})`);
             $("#zoom").css("background-size", `700px 700px`);
             $("#zoom").css("background-repeat", `no-repeat`);
-            $("#zoom").css("background-position", `-${e.clientX - 610}px -${e.clientY - 50}px `);
+            $("#zoom").css("background-position", `-${e.clientX - 415}px -${e.clientY - 130}px `);
 
             //${e.clientX}px ${e.vclientY}px
 

@@ -389,3 +389,7 @@ button:focus{
 .sub_count{
     width: 50%;
 }
+
+.buy-product-price:after{
+    content: "$";
+}

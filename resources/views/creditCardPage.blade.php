@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="buy-product-price" id="buy-product-price">
-                    {{$buyProduct->productPrice}} $
+                    {{$buyProduct->productPrice}}
                 </div>
                 <div>
                     <button class="but_count sub_count mt-2" type="submit">Buy</button>

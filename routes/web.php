@@ -71,6 +71,7 @@ Route::get('/logOutAdmin', [AdminController::class, 'logOut'])->name("logOutAdmi
 Route::post('/addProduct', [ProductController::class, 'addProduct'])->name("addProduct");
 Route::post('/addBasket/{id}', [BasketController::class, 'addBasket'])->name("addBasket");
 Route::get('/catalog', [CatalogController::class, 'getCatalog'])->name("catalog");
+Route::post('/filter', [CatalogController::class, 'filter'])->name("filter");
 Route::get('/categories', [CategoryController::class, 'getCategories'])->name("categories");
 Route::get('/history', [HistoryController::class, 'getHistory'])->name("history");
 Route::get('/category/{id}', [CategoryController::class, 'getCategory'])->name("category");
