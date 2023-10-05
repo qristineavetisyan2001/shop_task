@@ -26,7 +26,7 @@ class BasketController extends Controller
         $currentUser = session("loggedUser");
 
         $getBasketProducts = Basket::join("products", "products.id", "=", "basket_products.product_id")
-            ->where("basket_products.user_id", $currentUser['id'])
+            ->where("basket_products.user_id", $currentUser['id'])->where('productCount','>','0')
             ->get();
 
         foreach ($getBasketProducts as $basketProduct){

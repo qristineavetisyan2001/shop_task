@@ -22,7 +22,7 @@
                                 <div>
                                     @foreach($categories as $index => $category)
                                         <div class="mx-3">
-                                            <input value="{{$category->id}}" name={{"categories".$index}} type="checkbox">
+                                            <input value="{{$category->id}}" name={{"categories[]"}} type="checkbox">
                                             <span>{{$category->categoryName}}</span>
                                         </div>
                                     @endforeach
@@ -40,10 +40,10 @@
                             </div>
                             <div class="m-3">
                                 <div>
-                                    <span>Price in </span><input class="price_input" type="number" min="0">
+                                    <span>Price in </span><input id="minPrice" name="minPrice" class="price_input" type="number" min="0">
                                 </div>
                                 <div class="mt-2">
-                                    <span>Price to </span><input class="price_input" type="number" min="0">
+                                    <span>Price to </span><input id="maxPrice" name="maxPrice" class="price_input" type="number" min="0">
                                 </div>
                             </div>
                             <div class="mx-auto my-2 w-25">
@@ -55,7 +55,6 @@
             </div>
 
             <div class="catalog-products">
-
                 @foreach($products as $product)
                     <div class="new-product">
                         <div class="new-product-image">
@@ -85,5 +84,10 @@
         $('.filter').on('click', function () {
             $('.filter_div').slideToggle('slow')
         });
+
+        $('#maxPrice').on('keyup', ()=>{
+            $('#maxPrice').attr('min', $('#minPrice').val());
+        })
+
     </script>
 @endsection

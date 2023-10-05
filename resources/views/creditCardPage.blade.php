@@ -32,6 +32,9 @@
                     <button class="but_count sub_count mt-2" type="submit">Buy</button>
                 </div>
             </form>
+            @if($errors)
+                <div class="alert-danger">{{$errors->first()}}</div>
+            @endif
         </div>
         <div class="containeraaaa">
             <section class="card" id="card">

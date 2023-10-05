@@ -20,7 +20,7 @@ class ProductController extends Controller
         $newProduct->productCode = "product_" . date("y-m-d H:s:i");
         $newProduct->save();
 
-        $product = Product::where("productCode", $newProduct->productCode)->get()->first();
+        $product = Product::where("productCode", $newProduct->productCode)->where('productCount','>','0')->get()->first();
 
         self::addProductImages($product->id, $request->file());
         return back();

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{asset("css/header_style.css")}}">
 <nav class="navbar navbar-expand-lg navbar-dark header">
     <div class="ml-3">
-        <img class="logo " src="{{asset("images/22.png")}}" alt="">
+        <a href="{{route("home")}}"><img class="logo " src="{{asset("images/22.png")}}" alt=""></a>
     </div>
     <a class="navbar-brand mx-3" href="{{route("home")}}">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"

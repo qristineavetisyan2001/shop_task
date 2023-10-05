@@ -54,20 +54,15 @@ Route::get('/userPage', function () {
     return view('userPage');
 })->name('userPage');
 
-Route::get('/ordersPage', function () {
-    return view('ordersPage');
-})->name('ordersPage');
-
-
 Route::get('/basketPage', function () {
     return view('basketPage');
 })->name('basketPage');
 
+
+
 Route::post('/setUser', [RegistrationController::class, 'registration'])->name("registration");
 Route::post('/loginUser', [LoginController::class, 'login'])->name("login");
 Route::get('/logOut', [LogOutController::class, 'logout'])->name("logOut");
-Route::post('/loginAdmin', [AdminController::class, 'login'])->name("loginAdmin");
-Route::get('/logOutAdmin', [AdminController::class, 'logOut'])->name("logOutAdmin");
 Route::post('/addProduct', [ProductController::class, 'addProduct'])->name("addProduct");
 Route::post('/addBasket/{id}', [BasketController::class, 'addBasket'])->name("addBasket");
 Route::get('/catalog', [CatalogController::class, 'getCatalog'])->name("catalog");
@@ -86,6 +81,11 @@ Route::post('/changeUserInfo', [UserController::class, 'changeUserInfo'])->name(
 Route::post('/addCategory', [CategoryController::class, 'addCategory'])->name("addCategory");
 Route::post('/sold/{id}', [SoldProductController::class, 'sold'])->name("sold");
 Route::get('/admin', [AdminController::class, 'getAdminPage'])->name('admin');
+Route::post('/loginAdmin', [AdminController::class, 'login'])->name("loginAdmin");
+Route::get('/logOutAdmin', [AdminController::class, 'logOut'])->name("logOutAdmin");
+Route::get('/getTables', [AdminController::class, 'getTables'])->name("getTables");
+Route::get('/deleteProduct/{id}', [AdminController::class, 'deleteProduct'])->name("deleteProduct");
+Route::get('/deleteCategory/{id}', [AdminController::class, 'deleteCategory'])->name("deleteCategory");
 Route::get('/', [HomeController::class, 'getHome'])->name("home");
 
 

@@ -7,32 +7,26 @@
             <img class="logo" src="{{asset('images/22.png')}}" alt="">
         </div>
         <p class="footer-links">
-            <a href="#" class="link-1">Home</a>
+            <a href="{{route("home")}}" class="link-1">Home</a>
 
-            <a href="#">Blog</a>
+            <a href="{{ route("catalog") }}">Catalog</a>
 
-            <a href="#">Pricing</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Faq</a>
-
-            <a href="#">Contact</a>
+            <a href="{{ route("categories") }}">Categories</a>
         </p>
 
-        <p class="footer-company-name">Company Name © 2015</p>
+        <p class="footer-company-name">Titer accessories © 2023</p>
     </div>
 
     <div class="footer-center">
 
         <div>
             <i class="fa-solid fa-location-dot"></i>
-            <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+            <p><span>Azatutyan Ave</span> Raykom, Armenia</p>
         </div>
 
         <div>
             <i class="fa-solid fa-phone"></i>
-            <p>+1.555.555.5555</p>
+            <p>+37493125238</p>
         </div>
 
         <div>

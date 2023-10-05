@@ -17,11 +17,13 @@ class CategoryController extends Controller
         $newCategory->categoryImage = FileSystem::file_upload($request->file('category_image'), "uploads/categories/");;
 
         $newCategory->save();
+
+        return back();
     }
 
     public static function getCategory($id)
     {
-        $products = Product::where('category_id', $id)->get();
+        $products = Product::where('category_id', $id)->where('productCount','>','0')->get();
         $categories = Category::get();
         return view("catalog",['products'=>$products, "categories" => $categories]);
     }

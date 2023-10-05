@@ -19,7 +19,7 @@
                             <td class="td"><img class="history-product-image" src="{{asset('uploads/content/'.$soldProduct->productImage)}}" /></td>
                             <td class="td">{{$soldProduct->productName}}</td>
                             <td class="td">{{$soldProduct->soldProductCount}}</td>
-                            <td class="td">{{$soldProduct->created_at}}</td>
+                            <td class="td">{{$soldProduct->soldDate}}</td>
                             <td class="td">{{$soldProduct->productPrice * $soldProduct->soldProductCount}}$</td>
                         </tr>
                     @endforeach
