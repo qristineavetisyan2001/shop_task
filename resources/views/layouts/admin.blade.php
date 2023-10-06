@@ -154,7 +154,6 @@
         @yield('content')
 
 
-
     </div>
 
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa-solid fa-arrow-up"></i></a>

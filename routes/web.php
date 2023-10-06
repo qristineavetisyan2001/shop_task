@@ -86,6 +86,7 @@ Route::get('/logOutAdmin', [AdminController::class, 'logOut'])->name("logOutAdmi
 Route::get('/getTables', [AdminController::class, 'getTables'])->name("getTables");
 Route::get('/deleteProduct/{id}', [AdminController::class, 'deleteProduct'])->name("deleteProduct");
 Route::get('/deleteCategory/{id}', [AdminController::class, 'deleteCategory'])->name("deleteCategory");
+Route::post('/editCategory/{id}', [AdminController::class, 'editCategory'])->name("editCategory");
+Route::post('/editProduct/{id}', [AdminController::class, 'editProduct'])->name("editProduct");
 Route::get('/', [HomeController::class, 'getHome'])->name("home");
-
 

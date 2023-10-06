@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\FileSystem;
 use App\Models\Admin;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
@@ -56,6 +58,57 @@ class AdminController extends Controller
     public static function deleteCategory($id)
     {
         Category::where('id', $id)->delete();
+
+        return back();
+    }
+
+    public static function editCategory($id, Request $request)
+    {
+        $category = Category::where('id', $id)->get()->first();
+
+        if($request->categoryName){
+            $category->categoryName = $request->categoryName;
+        }
+        if($request->file('category_image')){
+            File::delete(public_path('uploads/categories/' . $category->categoryImage));
+            $category->categoryImage = FileSystem::file_upload($request->file('category_image'), "uploads/categories/");
+        }
+
+        $category->save();
+
+        return back();
+    }
+
+    public static function editProduct($id, Request $request)
+    {
+        $product = Product::with('images')->where('id', $id)->get()->first();
+
+        if($request->productName){
+            $product->productName = $request->productName;
+        }
+        if($request->productPrice){
+            $product->productPrice = $request->productPrice;
+        }
+        if($request->productCount){
+            $product->productCount = $request->productCount;
+        }
+        if($request->productDescription){
+            $product->productDescription = $request->productDescription;
+        }
+
+        $files = [];
+        foreach ($request->file() as $file){
+             array_push($files,$file);
+        }
+
+        if($files != ''){
+            foreach ($files as $file){
+                File::delete(public_path('uploads/content/' . $file));
+                $product->productImage = FileSystem::file_upload($request->file('product_image'), "uploads/content/");
+            }
+        }
+
+        $product->save();
 
         return back();
     }
