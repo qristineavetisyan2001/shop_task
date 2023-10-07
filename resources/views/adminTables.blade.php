@@ -17,6 +17,9 @@
             background-size: cover;
             background-position: center center;
         }
+        .edit_title{
+
+        }
     </style>
 
     <div class="table_container p-3 m-5 border border-light">
@@ -60,17 +63,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">EDIT CATEGORY</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="editForm" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="add-product-form-container">
-                            <div>
-                                <h3 class="">EDIT CATEGORY</h3>
-                            </div>
-                            <input id="editCategoryNameInput" name="categoryName" class="w-100"
+                            <input id="editCategoryNameInput" name="categoryName" class="w-100 text-danger"
                                    placeholder="category name" type="text">
                             <label class="image-input-label" for="category_image"
                                    id="editCategoryImageInput">+</label>
@@ -154,20 +154,17 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <h1 class="modal-title text-dark fs-5" id="staticBackdropLabel">EDIT PRODUCT</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="editForms" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="add-product-form-container">
-                            <div>
-                                <h3>EDIT PRODUCT</h3>
-                            </div>
-                            <input id="editProductNameInput" name="productName" placeholder="product name" type="text" class="w-100">
-                            <input  id="editProductCountInput" name="productCount" placeholder="product count" type="number" min="1" class="w-100">
-                            <input id="editProductPriceInput" name="productPrice" placeholder="product price" type="text" class="w-100">
-                            <textarea id="editProductDescriptionInput" placeholder="product description" name="productDescription" class="w-100"></textarea>
+                            <input id="editProductNameInput" name="productName" placeholder="product name" type="text" class="w-100 text-danger">
+                            <input  id="editProductCountInput" name="productCount" placeholder="product count" type="number" min="1" class="w-100 text-danger">
+                            <input id="editProductPriceInput" name="productPrice" placeholder="product price" type="text" class="w-100 text-danger">
+                            <textarea id="editProductDescriptionInput" placeholder="product description" name="productDescription" class="w-100 text-danger"></textarea>
                             Images
                             <div class="add-images-container">
                                 <label id="editProductImage1" class="image-input-label" for="image1">+</label>

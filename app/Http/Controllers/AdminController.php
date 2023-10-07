@@ -6,6 +6,7 @@ use App\Helpers\FileSystem;
 use App\Models\Admin;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -96,21 +97,23 @@ class AdminController extends Controller
             $product->productDescription = $request->productDescription;
         }
 
-        $files = [];
-        foreach ($request->file() as $file){
-             array_push($files,$file);
-        }
+        $productImages = ProductImage::where('product_id', $id)->get();
 
-        if($files != ''){
-            foreach ($files as $file){
-                File::delete(public_path('uploads/content/' . $file));
-                $product->productImage = FileSystem::file_upload($request->file('product_image'), "uploads/content/");
+        foreach ($productImages as $index => $productImage){
+            if($request->file('image'.($index+1))) {
+                File::delete(public_path('uploads/content/' . $productImage->productImage));
+                $productImage->productImage = FileSystem::file_upload($request->file('image'.($index+1)), "uploads/content/");
             }
         }
 
+        /**/
+
+        foreach ($productImages as $productImage){
+            $productImage->save();
+        }
+        
         $product->save();
 
         return back();
     }
-
 }
