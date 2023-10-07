@@ -3,22 +3,9 @@
 @section("content")
 
     <style>
-        .modal-wrapper {
-            display: none;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            background-color: rgb(0, 0, 0, 0.5);
-        }
-
         .image-input-label{
             background-size: cover;
             background-position: center center;
-        }
-        .edit_title{
-
         }
     </style>
 
@@ -42,9 +29,7 @@
                     <td><img width="50px" height="50px" src="{{'uploads/categories/'.$category->categoryImage}}"></td>
                     <td>{{$category->created_at}}</td>
                     <td>
-                        <button id="{{'editModalButton'.$category->id}}" type="button" class="btn btn-primary editModalButton"
-                                data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                class="fa-solid fa-pen-to-square"></i></button>
+                        <button id="{{'editModalButton'.$category->id}}" type="button" class="btn btn-primary editModalButton" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-pen-to-square"></i></button>
                     </td>
                     <td>
                         <form action="{{route('deleteCategory', $category->id)}}">
@@ -57,7 +42,6 @@
             </tbody>
         </table>
     </div>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -86,21 +70,6 @@
         </div>
     </div>
     <!-- finish Modal -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="table_container p-5 m-5 border border-light">
         <table class="table">
             <thead>
@@ -190,11 +159,9 @@
         </div>
     </div>
     <!-- finish Modal -->
-
     <script src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
-
         @foreach($categories as $category)
             $('{{'#editModalButton'.$category->id}}').on('click', () => {
                 $('#editCategoryNameInput').val('{{$category->categoryName}}');
@@ -203,9 +170,6 @@
                 $("#editForm").attr('action', '{{route('editCategory', $category->id)}}')
             })
         @endforeach
-
-
-
         @foreach($products as $product)
         $('{{'#editModalButtonPr'.$product->id}}').on('click', () => {
             console.log('{{$product->id}}')
@@ -221,11 +185,6 @@
 
             $("#editForms").attr('action', '{{route('editProduct', $product->id)}}');
         })
-
-
         @endforeach
-
-
     </script>
-
 @endsection
